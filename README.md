@@ -1,8 +1,8 @@
-#Password Generator
+# Password Generator
 
 This is a simple password generator web application. It allows users to generate a random password based on selected criteria such as uppercase letters, lowercase letters, numbers, and symbols. Users can also specify the length of the generated password using a slider.
 
-##Features-
+## Features-
 •Generate a random password
 •Options to include:
   Uppercase letters
