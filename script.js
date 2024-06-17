@@ -1,13 +1,16 @@
 
-let button = document.getElementById('copyButton');
+document.getElementById('copyButton').addEventListener('click', function() {
+    const button = document.getElementById('copyButton');
+    const textToCopy = document.getElementById('passwordOutput').value;
 
-button.addEventListener('click', function() {
+    navigator.clipboard.writeText(textToCopy).catch(function(err) {
+    });
+
     button.style.backgroundColor = 'purple';
 
     setTimeout(function() {
         button.style.backgroundColor = 'white';
-    }, 20);
-
+    }, 20); 
 });
 
 // ------------Generate Password button working----------------
@@ -16,19 +19,25 @@ let genPswd = document.querySelector('#generateButton');
 
 genPswd.addEventListener('click',function(){
 
-    y = document.getElementById('sliderValue');
-    z = parseInt(y.innerText);
+    let y = document.getElementById('sliderValue');
+    let z = parseInt(y.innerText);
     
 
-    ps = document.getElementById('passwordOutput');
+    let ps = document.getElementById('passwordOutput');
     ps.value=genPassword(z,checked());
+    const psValue = ps.value;
+    
 
     let indColor1 = document.querySelector('.strength-indicator');
 
-    if (parseInt(ps.value)){
-        if (checked().length<=2 || y<8)
+    if ((psValue)){
+        if (checked().length <=2 || z<8)
             indColor1.style.backgroundColor='orangered';
+        else 
+            indColor1.style.backgroundColor= "#90EE90";
         
+    }else{
+        indColor1.style.backgroundColor= "#a6aba3";
     }
     }
     )
