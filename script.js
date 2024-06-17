@@ -1,0 +1,107 @@
+
+let button = document.getElementById('copyButton');
+
+button.addEventListener('click', function() {
+    button.style.backgroundColor = 'purple';
+
+    setTimeout(function() {
+        button.style.backgroundColor = 'white';
+    }, 20);
+
+});
+
+// ------------Generate Password button working----------------
+
+let genPswd = document.querySelector('#generateButton');
+
+genPswd.addEventListener('click',function(){
+
+    y = document.getElementById('sliderValue');
+    z = parseInt(y.innerText);
+    
+
+    ps = document.getElementById('passwordOutput');
+    ps.value=genPassword(z,checked());
+
+    let indColor1 = document.querySelector('.strength-indicator');
+
+    if (parseInt(ps.value)){
+        if (checked().length<=2 || y<8)
+            indColor1.style.backgroundColor='orangered';
+        
+    }
+    }
+    )
+
+// ---------------------------
+
+
+// -----------------change slider value--------------
+
+let pswdLen = document.getElementById('passwordLength');
+
+pswdLen.addEventListener('input',function(x){
+    y = x.target.value;
+    d = document.getElementById('sliderValue');
+    d.innerHTML=y
+    
+})
+
+// -------------------------------------------
+
+// change indicator color
+
+
+function RandomNum() {
+    return Math.trunc(Math.random()*10)
+}
+
+function RandomStrLower(){
+    return String.fromCharCode((Math.trunc(Math.random()*26)+1)+96);
+}
+
+function RandomStrUpper(){
+    return String.fromCharCode((Math.trunc(Math.random()*26)+1)+64);
+}
+
+function RandomSymbol() {
+    const symbols = "!@#$%^&*()_+[]{}|;:,.<>?"; // Define your symbol set
+    return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
+function returnOpt(inc){
+    let opt = [];
+    for (let i of inc){
+        if (i=='uppercase'){
+            opt.push(RandomStrUpper())
+        }else if (i=='lowercase'){
+            opt.push(RandomStrLower())
+        }else if (i=='numbers'){
+            opt.push(RandomNum())
+        }else if (i=='symbols'){
+            opt.push(RandomSymbol())
+        }; 
+    }; 
+    return opt;
+}
+function genPassword(n,inc){
+    const psswd = [];    
+    for (let i = 0 ; i < n ; i++){
+        let opt = returnOpt(inc)
+        psswd.push(opt[Math.trunc(Math.random()*opt.length)]);
+    };
+
+    return psswd.join('');
+};
+
+function checked(){
+    let boxes = [];
+    document.querySelectorAll('.checkbox').forEach(function(el){
+        let obj = el.getAttribute('id');
+        if (el.checked){  
+            boxes.push(obj);
+        }   
+    });
+    return boxes;
+};
+

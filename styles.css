@@ -1,0 +1,100 @@
+body {
+    background-color: #b094f1;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: #553C9A;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+#top-cont{
+    display: flex;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+input[type="text"] {
+    width: calc(100% - 40px);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dcd3f4;
+    color: white;
+}
+
+.copy-button {
+    background-color: #ededed;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;   
+}
+
+
+input[type="range"] {
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.strength-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #a6aba3;
+    display: inline-block;
+}
+
+.generate-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7C4DFF;
+    color: white;
+    cursor: pointer;
+}
+
+#str-last{
+    display: flex;
+    justify-content: space-between;
+}
+
+#slider1{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+#passwordOutput{
+    color: black;
+}

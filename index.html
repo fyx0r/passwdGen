@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <div class="input-group" id="top-cont">
+            <input id="passwordOutput" type="text" placeholder="P4$$w0rd" readonly>
+            <button id="copyButton" class="copy-button">
+                <i class="fa-regular fa-copy"></i>
+            </button>
+        </div>
+        <div class="input-group">
+            <label id="slider1">Password Length
+            <output id="sliderValue">8</output>
+            </label>
+            <input id="passwordLength" type="range" min="1" max="20" value="8">
+            
+        </div>
+        <div class="input-group">
+            <label><input class='checkbox' id="uppercase" type="checkbox"> Include Uppercase Letters</label>
+            <label><input class='checkbox' id="lowercase" type="checkbox"> Include Lowercase Letters</label>
+            <label><input class='checkbox' id="numbers" type="checkbox"> Include Numbers</label>
+            <label><input class='checkbox' id="symbols" type="checkbox"> Include Symbols</label>
+        </div>
+        <div class="input-group" id="str-last">
+            <label>Strength</label>
+            <div id="strengthIndicator" class="strength-indicator"></div>
+        </div>
+        <button id="generateButton" class="generate-button">Generate Password</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
